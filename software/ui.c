@@ -52,7 +52,7 @@ static uint8_t menu_stack_head = 0;
 
 static void ui_leds(uint8_t leds);
 static void ui_text(char text[], uint8_t display);
-static void ui_number(uint16_t num, uint8_t dot, uint8_t display);
+static void ui_number(uint32_t num, uint8_t dot, uint8_t display);
 static void ui_push_item(MenuItem *item);
 static void ui_pop_item();
 
@@ -194,7 +194,7 @@ static void ui_text(const char *text, uint8_t display)
 /* Display a number with automatic scaling.
  * dot = position where the dot should go
  */
-static void ui_number(uint16_t num, uint8_t dot, uint8_t display)
+static void ui_number(uint32_t num, uint8_t dot, uint8_t display)
 {
     uint16_t maximum = (display == DP_TOP) ? 10000 : 1000;
     uint16_t digits = (display == DP_TOP) ? 4 : 3;
